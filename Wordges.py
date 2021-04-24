@@ -34,7 +34,6 @@ for i in range(0,20):
 
 d = enchant.Dict("en_US")
 
-
 def check_word_h(length):
 
     i = 1
@@ -46,8 +45,7 @@ def check_word_h(length):
 
         if len(wrd) == length:
             if d.check(wrd):
-                print "Word : ", wrd
-                print "Turn of Player : ", (chance % 2) + 1
+                print ("Word : ", wrd)
         i = i + 1
 
 
@@ -64,9 +62,9 @@ def key(event):
             w.create_text(closest_obj.x, closest_obj.y, fill="red", font="times 25 bold", text=txt)
         closest_obj.c = txt
         closest_obj.p = (chance % 2) + 1
-
+        print("Turn of Player : ", (chance % 2) + 1)
         for ln in range(1,21):
-            print "Horizontal", ln ,"letter words in this chance"
+            print ("Horizontal", ln ,"letter words in this chance")
             check_word_h(ln)
 
 
